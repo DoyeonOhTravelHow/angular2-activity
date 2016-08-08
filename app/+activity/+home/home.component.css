@@ -1,0 +1,539 @@
+@import 'variables.css';
+
+#insuranceMain {
+  position: relative;
+
+  #commonEventBanner .rolling-banner-wrap .rolling-item .item-box .item .text-box {margin-top:0;}
+
+  /*top 배너*/
+  .top-banner {
+    height:38px;
+    /*background: url('/images/bg/@bg-insurance1.jpg') 50% 50% no-repeat;*/
+    background-size: cover;
+    position: relative;
+    position: absolute;
+    width:100%;
+    top:-38px;
+  }
+
+  /*롤링배너*/
+  .rolling-banner-wrap {
+    .rolling-item {
+      height:140px;
+      .item-box {
+        height:140px;
+        .item {
+          height:140px;
+          display:block;
+          position: relative;
+          background: url('/images/temp/@main-banner.jpg') 50% 50% no-repeat;
+          background-size: cover;
+          .text-box {
+            position: absolute;
+            width:100%;
+            text-align:center;
+            top:50%;
+            transform: translateY(-50%);
+            h2 {
+              font-size:$f12;
+              color:$white;
+            }
+            h3 {
+              font-size:$f22;
+              color:$white;
+              font-weight:bold;
+              margin:3px 0 5px;
+            }
+            p {
+              display:inline-block;
+              height:22px;
+              line-height:20px;
+              color:$white;
+              padding:0 8px;
+              border:1px solid $white;
+              border-radius:12px;
+            }
+          }
+        }
+      }
+    }
+    .rolling-indicator {
+      padding:8px 0;
+      text-align:center;
+      .item {
+        display:inline-block;
+        width:8px;
+        height:8px;
+        background: $gray2;
+        border-radius:50%;
+        margin-left:8px;
+        transition: all .2s;
+        &:first-child {
+          margin-left:0;
+        }
+        &.is-active {
+          width:16px;
+          height:8px;
+          border-radius:4px;
+          background: $orange;
+        }
+      }
+    }
+  }
+}
+
+.insuranceSearch {
+  position: relative;
+  .insurance-top-tab {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    background: rgba(0, 0, 0, 0.6);
+    /*-webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;*/
+    position: absolute;
+    bottom:0;
+    width:100%;
+    z-index: 100;
+    .TabSwitch {
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      -webkit-box-flex: 1;
+      flex: 1;
+      display: block;
+      text-align: center;
+      height: 38px;
+      line-height: 38px;
+      font-size: $f14;
+      color: rgba(255,255,255,.6);
+      position: relative;
+      width:50%;
+      -webkit-transition: all 0.2s;
+              transition: all 0.2s;
+      &::after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 19px;
+        position: absolute;
+        left: 0;
+        top: 9px;
+        background: rgba(255,255,255,.2);
+      }
+      &:first-child::after {
+        content: none;
+      }
+      &.is-active {
+        color: rgba(255,255,255,1);
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 14px;
+          height: 12px;
+          vertical-align: middle;
+          margin-right: 5px;
+          background: url("/images/icons/ico-insurance-tab-active.png") no-repeat 0 0;
+          background-size: 14px auto;
+        }
+      }
+    }
+  }
+
+  .insurance-search-option {
+    position: relative;
+    z-index:110;
+    background: $white;
+    .search-option1 {
+      .insurance-destination {
+        border-bottom: 1px solid $gray5;
+        padding: 10px 13px;
+        .TapView {
+          display:block;
+          text-align:center;
+          -webkit-transition: all 0.2s;
+                  transition: all 0.2s;
+          dl {
+            padding: 5px;
+            dt {
+              font-size: $f20;
+              height:27px;
+              line-height:27px;
+            }
+            dd {
+              font-size: $f13;
+              color: #a0a0a0;
+              height:17px;
+              line-height:17px;
+            }
+          }
+        }
+      }
+      /* 스케쥴 */
+      .insurance-schedule {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        border-bottom: 1px solid $gray5;
+        position: relative;
+        padding:0 13px;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          display: block;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          width: 40px;
+          height: 40px;
+          background: url("/images/icons/ico-calendar.png") no-repeat 50% 50%;
+          background-size: 18px auto;
+          margin-left: -20px;
+          border: 1px solid #f87e47;
+          border-radius: 50%;
+        }
+        .TapView {
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          -webkit-box-flex: 1;
+          flex: 1;
+          display: block;
+          text-align: center;
+          margin: 10px 0 10px 30px;
+          -webkit-transition: all 0.2s;
+                  transition: all 0.2s;
+          position: relative;
+          &:first-child {
+            margin: 10px 30px 10px 0;
+          }
+          .node-select {
+            position: absolute;
+            width:100%;
+            left:0;
+            bottom:10px;
+            -webkit-appearance: none;
+            border:0;
+            opacity: 0;
+            option {
+              text-align:center;
+            }
+          }
+          dl {
+            padding: 5px;
+            dt {
+              font-size: $f20;
+              height:27px;
+              line-height:27px;
+            }
+            dd {
+              font-size: $f13;
+              color: #a0a0a0;
+              height:17px;
+              line-height:17px;
+            }
+          }
+          &:hover {
+            background:#f9f9f9;
+          }
+          .tappable-select {
+            position: absolute;
+            width:40px;
+            height:40px;
+            display:block;
+
+            top:50%;
+            z-index:10;
+            -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+            &.front-tap {
+              left:-50px;
+            }
+            &.back-tap {
+              right:-50px;
+            }
+          }
+        }
+      }
+      /* 인원선택 */
+      .user-option {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: -webkit-box;
+        display: flex;
+        border-bottom: 1px solid $gray5;
+        padding: 13px 10px;
+        dl {
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          -webkit-box-flex: 1;
+          flex: 1;
+          text-align: center;
+          padding: 0 3px;
+          width:33.33333%;
+          dt {
+            font-size: $f13;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+
+    /* 샘플보기 */
+    .search-option2 {
+      .TabContainerHeader {
+        display:table;
+        padding:0 7px;
+        width:100%;
+        table-layout: fixed;
+        background: $yellow1;
+        .TabSwitch {
+          padding:0 5px;
+          height:35px;
+          line-height:35px;
+          display:table-cell;
+          font-size:$f13;
+          text-align:center;
+          color: rgba(76, 50, 46, 0.5);
+          &.is-active {
+            color: rgba(76, 50, 46, 1);
+          }
+        }
+      }
+      .TabContainerBody {
+        .TabContent {
+          padding:0 13px;
+        }
+        .title {
+          padding:17px 0;
+          text-align:center;
+          span {
+            display:inline-block;
+            position: relative;
+            font-size:$f14;
+            height:24px;
+            line-height:24px;
+            &.main-name {
+              padding-left:34px;
+              &::before {
+                content:"";
+                display:block;
+                position: absolute;
+                left:0;
+                top:50%;
+                width:24px;
+                height:24px;
+                transform: translateY(-50%);
+                background: url('/images/img/ico-insurance-ace.png') 0 0 no-repeat;
+                background-size: 24px auto;
+              }
+            }
+            &.sub-name {
+              padding-left:10px;
+              margin-left:9px;
+              color:$orange;
+              &::before {
+                content:"";
+                display:block;
+                height:14px;
+                width:1px;
+                background: $gray5;
+                position: absolute;
+                left:0;
+                top:50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+        .summary {
+          font-size:$f13;
+          margin-bottom:6px;
+          p {
+            &:first-child {
+              color:$orange;
+            }
+          }
+        }
+        .table-content {
+          border:1px solid $gray2;
+          background: $gray6;
+          .header1 {
+            display:table;
+            width:100%;
+            padding:10px 13px;
+            span {
+              font-size:$f13;
+              display:table-cell;
+              &:last-child {
+                text-align:right;
+              }
+            }
+          }
+          .header2 {
+            color:$brown2;
+            font-size:$f13;
+            padding:0 13px;
+            margin-bottom:10px;
+          }
+          .group {
+            border-top:1px solid $gray5;
+            padding:10px 0;
+
+            .cell {
+              padding:2px 13px;
+              display:table;
+              width:100%;
+              table-layout: fixed;
+              > span {
+                line-height:150%;
+                font-size:$f13;
+                color:#a3a3a3;
+                display:table-cell;
+                vertical-align: top;
+                &:first-child {
+                  padding-right:10px;
+                  width:65%;
+                }
+                &:last-child {
+                  text-align:right;
+                }
+              }
+              &.important {
+                span {
+                  color:$black1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+/* 애니메이션 */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@media only screen and (max-width:320px) {
+  .insuranceSearch {
+    .insurance-search-option {
+      .search-option2 {
+        .TabContainerHeader {
+          padding:0;
+          .TabSwitch {
+            padding:0 3px;
+            font-size:$f12;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-width:768px) {
+  #insuranceMain {
+    .rolling-banner-wrap {
+      .rolling-item {
+        height:240px;
+        .item-box {
+          height:240px;
+          .item {
+            height:240px;
+            .text-box {
+              position: absolute;
+              width:100%;
+              text-align:center;
+              top:50%;
+              transform: translateY(-50%);
+              h2 {
+                font-size:$f18;
+                color:$white;
+              }
+              h3 {
+                font-size:36px;
+                color:$white;
+                font-weight:bold;
+                margin:5px 0 10px;
+              }
+              p {
+                font-size:$f16;
+                display:inline-block;
+                height:28px;
+                line-height:26px;
+                color:$white;
+                padding:0 16px;
+                border:1px solid $white;
+                border-radius:14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*@media only screen and (min-width:768px) {
+  #insuranceMain {
+    .top-banner {
+      height:280px;
+      .text-box {
+        h1 {
+          font-size:28px;
+        }
+        h2 {
+          font-size:16px;
+        }
+      }
+    }
+  }
+}*/

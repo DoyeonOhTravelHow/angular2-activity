@@ -1,0 +1,84 @@
+/* 폰트값 셋팅 */
+$f11 :  .917em;
+$f12 : 1em;
+$f13 : 1.083em;
+$f14 : 1.167em;
+$f15 : 1.250em;
+$f16 : 1.333em;
+$f17 : 1.417em;
+$f18 : 1.500em;
+$f19 : 1.583em;
+$f20 : 1.667em;
+$f22 : 1.833em;
+$f24 : 2.000em;
+$f28 : 2.333em;
+$f28 : 2.333em;
+
+/* 컬러값 셋팅 */
+$white : #fff;
+$black1 : #0d0d0d;
+$black2 : #4f4f4f;
+$black3 : #707070;
+$black4 : #898989;
+$black5 : #959595;
+$yellow1 : #fbe600;
+$yellow2 : #f7c718;
+$orange : #f87e47;
+$red : #d84543;
+$blue : #2e96db;
+$gray1 : #a8a8a8;
+$gray2 : #c9c9c9;
+$gray3 : #b1b1b1;
+$gray4 : #dbdbdb;
+$gray5 : #e4e4e4;
+$gray6 : #f9f9f9;
+$gray7 : #bebebe;
+$brown1 : #4c322e;
+$brown2 : #70574d;
+$brown3 : #927b71;
+$brown4 : #c6b3af;
+$brown5 : #dbc298;
+$brown6 : #ebe0ca;
+$brown7 : #fcf8ed;
+
+/*
+  mixin 사용법
+  @define-mixin border-radius $val {
+    -webkit-border-radius:$val;
+    border-radius: $val;
+  }
+  @mixin border-radius 3px;
+
+  extend 사용법
+  @define-extend bg-green {
+      background: green;
+  }
+  .test {
+      @extend bg-green;
+  }
+*/
+@define-extend blind {
+  width: 0;
+  height: 0;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 100;
+}
+
+@define-extend text-over {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@define-extend box-scroll {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
